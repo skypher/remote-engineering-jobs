@@ -1,0 +1,16 @@
+sites:
+  weworkremotely (rss)
+    weworkremotely.com/categories/remote-devops-sysadmin-jobs.rss
+    weworkremotely.com/categories/remote-programming-jobs.rss
+  remoteok.io (api)
+  golangprojects.com (scrape)
+
+scraper
+ui frontend
+newsletter
+
+affiliates:
+  weworkremotely
+  triplebyte
+  honeypot
+
