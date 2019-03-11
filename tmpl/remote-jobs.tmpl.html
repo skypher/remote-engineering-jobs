@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Remote Engineering Jobs</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" type="text/css" href="css/hello-all.css"/>
+        <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+    </head>
+
+    <body>
+        <div class="container-fluid" id="page">
+            <div class="row">
+                <div class="col sidebar">
+                    <h1><img src="css/remoterocket1.png"/>Remote Engineering Jobs</h1>
+                    <p>Remote work is on the rise! This page collects remote software engineering jobs
+                    from various sites. The current sources are WeWorkRemotely and remoteok.io, and I'm looking to add more bit
+                    by bit.</p>
+                    <p>Enjoy and let me know what you think via <a
+                        href="mailto:polzer@fastmail.com">polzer@fastmail.com</a>!</p>
+                    <p>Please also check my blog and site at <a href="http://lpolzer.com">lpolzer.com</a>.</p>
+                    <p>Subscribe here for updates (100% privacy):
+                    <form method="GET" action="/newsletter-subscribe">
+                        <input type="text" name="email" id="email"/>
+                        <input type="submit" value="Subscribe"/>
+                        <input type="text" style="display:none" name="honeypot-captcha" id="honeypot-captcha"/></p>
+                    </form>
+                </div>
+                <div class="col">
+                    {{ $initial_run := true }}
+                    {{ $prev_month := "None" }}
+                    {{ $prev_day := 0 }}
+                    {{ range . }}
+                        {{ $month := .Date.Month.String }}
+                        {{ $month_switched := false }}
+                        {{ if ne $month $prev_month }}
+                          {{ $prev_month = $month }}
+                          {{ $month_switched = true }}
+                        {{ end }}
+                        {{ $day := .Date.Day }}
+                        {{ $day_switched := false }}
+                        {{ if ne $day $prev_day }}
+                          {{ $prev_day = $day }}
+                          {{ $day_switched = true }}
+                        {{ end }}
+                        {{ if eq $month_switched true }}
+                          <h2>{{ $month }}</h2>
+                        {{ end}}
+                        {{ if eq $day_switched true }}
+                          {{ if eq $initial_run false }}
+                              </ul>
+                          {{ end }}
+                          <h3>{{ $day }}</h3>
+                          <ul>
+                        {{ end}}
+
+                        <li><a href="{{ .Url.String }}">{{ .Title }}</a>
+                            <ul class="keyword">
+                                {{ range .ExtractKeywords }}
+                                    <li>{{ . }}</li>
+                                {{ end }}
+                            </ul>
+                        </li>
+                        {{ $initial_run = false }}
+                    {{end}}
+                    </ul>
+                </div> <!-- col -->
+            </div> <!-- row -->
+        </div> <!-- page -->
+    </body>
+</html>

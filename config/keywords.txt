@@ -1,0 +1,100 @@
+senior
+scala
+ruby
+ror
+rails
+web
+backend
+back end
+frontend
+front end
+junior
+manager
+distributed
+fullstack full-stack
+full stack
+product
+node
+c++
+java
+javascript
+typescript
+react
+contract
+django
+python
+ux
+account manager
+mid-level midlevel
+head
+cto
+vue
+angular
+ios
+mobile
+android
+dba
+devops
+ci
+continuous integration
+continuous development
+security
+lead
+php
+laravel
+game gaming
+lisp
+racket
+elixir
+phoenix
+websockets
+scalable
+database
+sql
+key-value
+kubernetes k8s
+data engineer
+data scientist
+machine learning
+ai artificial intelligence
+typo3
+analytics
+advertising
+c#
+f#
+.net
+voip
+video (without "video games")
+golang
+polyglot
+finance
+fintech
+aws
+gcp
+azure
+linux unix
+administrator
+swift
+kotlin
+scala
+test
+automation
+qa
+quality assurance
+engineering manager
+blockchain
+customer service
+scrum
+agile
+kanban
+time zone
+timezone
+architect
+spring
+marketing
+cloud
+graphql
+kafka
+apollo
+dynamodb
+computer vision
