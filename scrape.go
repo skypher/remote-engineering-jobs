@@ -64,6 +64,8 @@ func (job *Job) ExtractKeywords() []string {
 	matches, _ := arrayOperations.Intersect(keywords, descWords)
 	matchesSlice, _ := matches.Interface().([]string)
 
+	sort.Strings(matchesSlice)
+
 	return matchesSlice
 }
 
